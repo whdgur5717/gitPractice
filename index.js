@@ -1,1 +1,1 @@
-console.log('처음인데');
+console.log('처음임');
