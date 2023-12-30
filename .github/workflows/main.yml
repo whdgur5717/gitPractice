@@ -1,15 +1,14 @@
-name: Lint check 
+name: Review Assign
 
-on: pull_request
+on:
+  pull_request:
+    types: [opened, ready_for_review]
 
 jobs:
-  build-test:
-    name: Next Lint test
+  assign:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      - uses: hkusu/review-assign-action@v1
         with:
-          node-version: '16'
-      - run: npm i
-      - run: npm run lint
+          assignees: ${{ github.actor }} # assign pull request author
+          reviewers: whdgur5717 # if draft, assigned when draft is released
