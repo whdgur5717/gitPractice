@@ -1,0 +1,38 @@
+{
+  "name": "gitPractice",
+  "version": "1.0.0",
+  "description": "",
+  "author": {
+    "name": "이종혁"
+  },
+  "contributors": [],
+  "homepage": "https://github.com/whdgur5717/gitPractice",
+  "bugs": "https://github.com/whdgur5717/gitPractice/issues",
+  "repository": "https://github.com/whdgur5717/gitPractice",
+  "license": "MIT",
+  "engines": {
+    "node": ">=10"
+  },
+  "main": "index.js",
+  "files": [
+    "index.js"
+  ],
+  "scripts": {
+    "lint": "eslint . --cache --fix",
+    "pretest": "npm run lint",
+    "format": "prettier --loglevel warn --write \"**/*.{js,css,md}\"",
+    "posttest": "npm run format",
+    "prepare": "husky install"
+  },
+  "keywords": [],
+  "devDependencies": {
+    "eslint": "^8.56.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^15.2.0",
+    "prettier": "^3.1.1"
+  },
+  "lint-staged": {
+    "*.js": "eslint --cache --fix",
+    "*.{js,css,md}": "prettier --write"
+  }
+}
