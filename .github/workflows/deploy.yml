@@ -31,5 +31,5 @@ jobs:
       - name: Execute core
         uses: ./.github/actions/core
         with:
-          github_token: ${{secrets.github-token}}
+          github_token: ${{secrets.token}}
           reviewers: ${{vars.reviewers}}
