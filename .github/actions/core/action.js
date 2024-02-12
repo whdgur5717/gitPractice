@@ -6,7 +6,7 @@ try {
 	const nameToGreet = getInput("reviewers");
 	const token = getInput("github_token");
 	const octokit = getOctokit(token);
-	console.log(octokit.pull);
+	console.log(octokit);
 	console.log(`Hello ${nameToGreet}!`);
 	const time = new Date().toTimeString();
 	setOutput("time", time);
