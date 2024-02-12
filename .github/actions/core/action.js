@@ -1,11 +1,20 @@
-import { getInput, setOutput, setFailed } from "@actions/core";
+import { getInput, setFailed } from "@actions/core";
 import { context, getOctokit } from "@actions/github";
 
 try {
-	// `who-to-greet` input defined in action metadata file
 	const reviewers = getInput("reviewers");
-	console.log(context, context.repo, context.issue.number);
 	const token = getInput("github_token");
+	const octokit = github.getOctokit(token);
+
+	const { owner, repo } = github.context.repo;
+	const prNumber = github.context.payload.pull_request.number;
+
+	await octokit.pulls.requestReviewers({
+		owner,
+		repo,
+		prNumber,
+		reviewers,
+	});
 } catch (error) {
 	setFailed(error.message);
 }
