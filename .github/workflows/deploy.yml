@@ -28,5 +28,5 @@ jobs:
           echo 'npm cache existed'
           npm ci
 
-      - name: Execute core
-        uses: ./.github/actions/core
+      # - name: Execute core
+      #   uses: ./.github/actions/core
