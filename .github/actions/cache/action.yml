@@ -20,6 +20,7 @@ runs:
           ${{ runner.os }}-node-
 
     - name: Install Dependencies
+      shell: bash
       if: steps.cache.outputs.cache-hit != 'true'
       run: |
         echo 'npm cache existed'
