@@ -6,8 +6,8 @@ try {
 	const token = getInput("github_token");
 	const octokit = getOctokit(token);
 
-	const { owner, repo } = github.context.repo;
-	const prNumber = github.context.payload.pull_request.number;
+	const { owner, repo } = context.repo;
+	const prNumber = context.payload.pull_request.number;
 
 	await octokit.pulls.requestReviewers({
 		owner,
