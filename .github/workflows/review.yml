@@ -10,3 +10,5 @@ jobs:
     steps:
       - name: Thank you
         uses: whdgur5717/actions@main
+        with:
+          token: ${{secrets.GITHUB_TOKEN}}
