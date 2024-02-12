@@ -1,8 +1,6 @@
 name: Thank you
 
-on:
-  pull_request:
-    types: [opened]
+on: push
 
 jobs:
   main:
