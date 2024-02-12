@@ -4,7 +4,7 @@ import { context, getOctokit } from "@actions/github";
 try {
 	// `who-to-greet` input defined in action metadata file
 	const nameToGreet = getInput("reviewers");
-	const token = getInput("github-token");
+	const token = getInput("github_token");
 	const octokit = getOctokit(token);
 	console.log(octokit.pull);
 	console.log(`Hello ${nameToGreet}!`);
