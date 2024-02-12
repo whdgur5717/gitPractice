@@ -1,12 +1,21 @@
-name: Thank you
+name: Cache Test
 
 on: push
 
 jobs:
-  main:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - name: Thank you
-        uses: whdgur5717/actions@main
+      - uses: actions/checkout@v3
+
+      - name: Use Node.js
+        uses: actions/setup-node@v3
         with:
-          token: ${{secrets.GITHUB_TOKEN}}
+          node-version: 16
+
+      - name: Cache node modules
+        uses: actions/cache@v3
+        id: npm-cache
+        with:
+          path: ${{ steps.npm-cache-dir.outputs.dir }}
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
