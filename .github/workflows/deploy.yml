@@ -8,5 +8,5 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Cache
-        uses: ./.github/actions/cache
+      - name: Cache node_modules
+        uses: ./github/workflows/cache
