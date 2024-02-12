@@ -9,7 +9,7 @@ try {
 	const { owner, repo } = context.repo;
 	const prNumber = context.payload.pull_request.number;
 
-	await octokit.pulls.requestReviewers({
+	await octokit.rest.pulls.requestReviewers({
 		owner,
 		repo,
 		prNumber,
