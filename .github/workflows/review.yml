@@ -27,3 +27,8 @@ jobs:
         run: |
           echo 'npm cache existed'
           npm ci
+
+      - name: Execute action.js
+        uses: action.js
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
