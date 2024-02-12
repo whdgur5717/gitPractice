@@ -31,4 +31,4 @@ jobs:
       - name: Execute core
         uses: ./.github/actions/core
         with:
-          reviewers: ${{vars}}
+          reviewers: a
