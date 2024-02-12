@@ -10,3 +10,6 @@ jobs:
 
       - name: Cache node_modules
         uses: ./.github/actions/cache
+
+      - name: Execute core
+        uses: ./.github/actions/core

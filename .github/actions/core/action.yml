@@ -1,0 +1,5 @@
+name: "core"
+
+runs:
+  using: "node20"
+  main: "action.js"
