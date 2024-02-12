@@ -24,4 +24,6 @@ jobs:
 
       - name: Install Dependencies
         if: steps.cache.outputs.cache-hit != 'true'
-        run: npm ci
+        run: |
+          echo 'npm cache existed'
+          npm ci
