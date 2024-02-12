@@ -1,17 +1,14 @@
-name: Review Assign
+name: deploy
 
-on:
-  pull_request:
-    types: [opened, ready_for_review]
+on: push
 
 jobs:
-  assign:
+  deploy:
     runs-on: ubuntu-latest
-    permissions: 
-      pull-requests : write
     steps:
-      - uses: hkusu/review-assign-action@v1
+      - uses: actions/checkout@v3
+
+      - name: Use Node.js
+        uses: actions/setup-node@v3
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          assignees: ${{ github.actor }} 
-         
+          node-version: 16
