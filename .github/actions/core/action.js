@@ -7,13 +7,13 @@ try {
 	const octokit = getOctokit(token);
 
 	const { owner, repo } = context.repo;
-	const prNumber = context.payload.pull_request.number;
+	const pull_number = context.issue.number;
 
 	await octokit.rest.pulls.requestReviewers({
 		owner,
 		repo,
-		prNumber,
-		reviewers,
+		pull_number,
+		reviewers: [reviewers],
 	});
 } catch (error) {
 	setFailed(error.message);
