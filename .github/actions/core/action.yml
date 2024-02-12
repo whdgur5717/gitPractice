@@ -3,7 +3,7 @@ name: "core"
 inputs:
   reviewers:
     required: true
-  github-token:
+  github_token:
     required: true
 
 runs:
