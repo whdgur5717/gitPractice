@@ -23,7 +23,8 @@
     "pretest": "npm run lint",
     "format": "prettier --loglevel warn --write \"**/*.{js,css,md}\"",
     "posttest": "npm run format",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "build": "npm run build"
   },
   "keywords": [],
   "devDependencies": {
