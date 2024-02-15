@@ -27,6 +27,16 @@ jobs:
         run: |
           echo 'npm cache existed'
           npm ci
+  lint:
+    needs: deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: lint
+        run: npm run lint
 
-      - name: Build
-        run: npm run build
+  prettier:
+    needs: deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: lint
+        run: npm run format
