@@ -17,12 +17,14 @@
   "files": [
     "index.js"
   ],
+  "type": "module",
   "scripts": {
     "lint": "eslint . --cache --fix",
     "pretest": "npm run lint",
     "format": "prettier --loglevel warn --write \"**/*.{js,css,md}\"",
     "posttest": "npm run format",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "build": "npm run build"
   },
   "keywords": [],
   "devDependencies": {
@@ -36,6 +38,7 @@
     "*.{js,css,md}": "prettier --write"
   },
   "dependencies": {
+    "@actions/core": "^1.10.1",
     "@actions/github": "^6.0.0"
   }
 }
